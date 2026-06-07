@@ -49,7 +49,28 @@ description: 文章的简短描述，用于归档页摘要。
 - `category` 和 `project` 用于归档页分组显示
 - `tags` 可用于未来添加标签筛选功能
 
-### 3. 在索引页添加链接
+### 3. 更新侧边栏配置
+
+**如果是已有分类下新增文章**（如 React、Docker 等），在对应目录的 `index.md` 中添加链接即可，侧边栏无需修改：
+
+```markdown
+- [新文章标题](./新文件路径)
+```
+
+**如果是新建分类目录**（如新建了 `docs/devops/test/`），需要编辑 `docs/.vitepress/config.ts`，在对应侧边栏分组中添加新条目：
+
+```ts
+{
+  text: 'Test',              // 侧边栏显示的名称
+  collapsed: true,           // 是否默认折叠
+  items: [
+    { text: '概览', link: '/devops/test/' },
+    { text: 'test', link: '/devops/test/test' },
+  ],
+},
+```
+
+### 4. 在索引页添加链接
 
 在对应目录的 `index.md` 文章列表中添加新条目：
 
@@ -57,7 +78,7 @@ description: 文章的简短描述，用于归档页摘要。
 - [新文章标题](./新文件路径)
 ```
 
-### 4. 提交推送
+### 5. 提交推送
 
 ```bash
 git add .
