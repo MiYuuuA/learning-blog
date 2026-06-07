@@ -98,6 +98,14 @@ export default defineConfig({
                 { text: 'GitHub Actions 入门', link: '/devops/ci-cd/github-actions-intro' },
               ],
             },
+            {
+              text: 'Test',
+              collapsed: true,
+              items: [
+                { text: '概览', link: '/devops/test/' },
+                { text: 'test', link: '/devops/test/test' },
+              ],
+            },
           ],
         },
       ],
