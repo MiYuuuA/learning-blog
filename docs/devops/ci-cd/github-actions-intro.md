@@ -1,5 +1,5 @@
 ---
-title: GitHub Actions Intro
+title: GitHub Actions 入门
 date: 2026-06-05
 tags:
   - ci-cd
@@ -8,22 +8,22 @@ tags:
   - automation
 category: devops
 project: ci-cd
-description: Getting started with GitHub Actions — automate builds, tests, and deployments.
+description: GitHub Actions 入门指南 — 自动化构建、测试和部署。
 ---
 
-# GitHub Actions Intro
+# GitHub Actions 入门
 
-GitHub Actions is a CI/CD platform built into GitHub. Automate your workflow from push to deploy.
+GitHub Actions 是 GitHub 内置的 CI/CD 平台。从代码推送到部署，自动化你的工作流。
 
-## Core Concepts
+## 核心概念
 
-- **Workflow** — a YAML file in `.github/workflows/` that defines a set of jobs
-- **Event** — a trigger that starts a workflow (push, PR, schedule, manual)
-- **Job** — a set of steps that run on the same runner
-- **Step** — an individual action or shell command
-- **Runner** — the machine that executes the job (Ubuntu, macOS, Windows)
+- **Workflow（工作流）** — `.github/workflows/` 目录下的 YAML 文件，定义了一组作业
+- **Event（事件）** — 触发工作流的条件（push、PR、定时、手动）
+- **Job（作业）** — 在同一运行器上执行的一组步骤
+- **Step（步骤）** — 单个 Action 或 Shell 命令
+- **Runner（运行器）** — 执行作业的机器（Ubuntu、macOS、Windows）
 
-## Your First Workflow
+## 你的第一个工作流
 
 ```yaml
 name: CI
@@ -46,18 +46,18 @@ jobs:
       - run: npm test
 ```
 
-## Common Actions
+## 常用 Actions
 
-| Action | Purpose |
+| Action | 用途 |
 |--------|---------|
-| `actions/checkout@v4` | Clone your repository |
-| `actions/setup-node@v4` | Install Node.js |
-| `actions/upload-pages-artifact@v3` | Upload static site for Pages |
-| `actions/deploy-pages@v4` | Deploy to GitHub Pages |
+| `actions/checkout@v4` | 克隆你的仓库 |
+| `actions/setup-node@v4` | 安装 Node.js |
+| `actions/upload-pages-artifact@v3` | 上传静态站点用于 Pages 部署 |
+| `actions/deploy-pages@v4` | 部署到 GitHub Pages |
 
-## Secrets
+## 密钥
 
-Store sensitive values in **Settings > Secrets and variables > Actions**:
+在 **Settings > Secrets and variables > Actions** 中存储敏感信息：
 
 ```yaml
 - run: deploy.sh
@@ -65,9 +65,9 @@ Store sensitive values in **Settings > Secrets and variables > Actions**:
     API_KEY: ${{ secrets.API_KEY }}
 ```
 
-## Key Takeaways
+## 核心要点
 
-1. Start simple — one workflow with lint + test is infinitely better than zero.
-2. Use the marketplace — don't reinvent actions for common tasks.
-3. Cache dependencies with `actions/setup-node@v4` (it has built-in caching).
-4. Store all secrets in GitHub Secrets, never in workflow files.
+1. 从简单开始 — 一个包含 lint 和 test 的工作流比没有强无数倍。
+2. 善用 Marketplace — 不必为常见任务重复造轮子。
+3. 使用 `actions/setup-node@v4` 缓存依赖（内置缓存功能）。
+4. 所有密钥存储在 GitHub Secrets 中，绝不要放在工作流文件里。

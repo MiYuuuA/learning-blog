@@ -1,7 +1,7 @@
-# Databases
+# 数据库
 
-Learning notes on database technologies.
+数据库技术学习笔记。
 
-## Articles
+## 文章
 
-- [PostgreSQL Basics](./postgres-basics) — Setup, queries, indexing, and best practices.
+- [PostgreSQL 基础](./postgres-basics) — 安装配置、常用查询、索引及最佳实践。

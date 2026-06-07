@@ -2,25 +2,25 @@
 layout: home
 
 hero:
-  name: Learning Blog
-  text: Notes & discoveries
-  tagline: Frontend, backend, devops — organized by topic, project, and time.
+  name: 学习博客
+  text: 笔记与发现
+  tagline: 前端、后端、DevOps — 按主题、项目和时间整理。
   actions:
     - theme: brand
-      text: Start Reading
+      text: 开始阅读
       link: /frontend/
     - theme: alt
-      text: Browse Archive
+      text: 浏览归档
       link: /archive/
 
 features:
-  - title: By Category
-    details: Frontend, Backend, and DevOps — each with its own organized section and sidebar navigation.
+  - title: 按分类
+    details: 前端、后端和 DevOps — 每个分类都有独立的结构化章节和侧边栏导航。
     icon: 📂
-  - title: By Project
-    details: Within each category, notes are grouped by specific technologies and projects for focused learning.
+  - title: 按项目
+    details: 在每个分类中，笔记按具体技术和项目分组，便于集中学习。
     icon: 📦
-  - title: By Time
-    details: Every post is dated. Browse the archive to see what you learned and when.
+  - title: 按时间
+    details: 每篇文章都有日期标注。浏览归档，回顾你的学习历程。
     icon: 📅
 ---

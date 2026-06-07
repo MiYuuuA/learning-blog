@@ -1,7 +1,7 @@
 # CI/CD
 
-Learning notes on continuous integration and deployment.
+持续集成与部署学习笔记。
 
-## Articles
+## 文章
 
-- [GitHub Actions Intro](./github-actions-intro) — Automate your workflow from code to deploy.
+- [GitHub Actions 入门](./github-actions-intro) — 从代码到部署，自动化你的工作流。

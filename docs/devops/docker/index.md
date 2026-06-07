@@ -1,7 +1,7 @@
 # Docker
 
-Learning notes on Docker and containerization.
+Docker 与容器化学习笔记。
 
-## Articles
+## 文章
 
-- [Docker Compose](./docker-compose) — Multi-container applications made easy.
+- [Docker Compose](./docker-compose) — 轻松管理多容器应用。

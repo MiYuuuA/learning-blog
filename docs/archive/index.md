@@ -1,11 +1,11 @@
 ---
-title: Archive
+title: 归档
 ---
 
 <script setup>
 import { data } from './posts.data.ts'
 
-// Group by year
+// 按年份分组
 const byYear = {}
 for (const post of data) {
   const year = new Date(post.date).getFullYear()
@@ -14,9 +14,9 @@ for (const post of data) {
 }
 </script>
 
-# Archive
+# 归档
 
-All posts, ordered by date. Click any title to read.
+所有文章，按日期排序。点击任意标题即可阅读。
 
 <div v-for="(posts, year) in byYear" :key="year" style="margin-bottom: 2rem;">
   <h2>{{ year }}</h2>
@@ -24,10 +24,10 @@ All posts, ordered by date. Click any title to read.
     <li v-for="post in posts" :key="post.url" style="margin-bottom: 0.5rem;">
       <a :href="post.url">{{ post.title }}</a>
       <span style="color: var(--vp-c-text-2); font-size: 0.85em;">
-        — {{ new Date(post.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) }}
+        — {{ new Date(post.date).toLocaleDateString('zh-CN', { month: 'long', day: 'numeric' }) }}
       </span>
       <span style="font-size: 0.8em; color: var(--vp-c-text-3);">
-        in {{ post.category }}/{{ post.project }}
+        分类：{{ post.category }}/{{ post.project }}
       </span>
       <span v-if="post.excerpt" style="display: block; font-size: 0.85em; color: var(--vp-c-text-2); margin-top: 0.15rem;">
         {{ post.excerpt }}

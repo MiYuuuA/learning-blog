@@ -1,5 +1,5 @@
 ---
-title: State Management in React
+title: React 状态管理
 date: 2026-05-28
 tags:
   - react
@@ -8,29 +8,29 @@ tags:
   - redux
 category: frontend
 project: react
-description: Comparing state management approaches in React — Context API, Zustand, Redux Toolkit, and Jotai.
+description: 对比 React 中的状态管理方案 — Context API、Zustand、Redux Toolkit 和 Jotai。
 ---
 
-# State Management in React
+# React 状态管理
 
-Managing state is one of the hardest problems in frontend development. Here's what I learned.
+状态管理是前端开发中最困难的问题之一。以下是我的学习总结。
 
-## The Problem
+## 问题所在
 
-As your React app grows, passing props through many levels ("prop drilling") becomes unmanageable. You need a way to share state across distant components.
+随着 React 应用的增长，通过多层组件传递 props（"prop 钻孔"）变得越来越难以维护。你需要一种在远距离组件之间共享状态的方式。
 
-## Solutions Compared
+## 方案对比
 
-| Library | Bundle Size | Learning Curve | Best For |
+| 方案 | 打包体积 | 学习曲线 | 最适合 |
 |---------|------------|----------------|----------|
-| Context API | 0 (built-in) | Easy | Small apps, theme/auth |
-| Zustand | ~1 KB | Very easy | Medium apps |
-| Redux Toolkit | ~11 KB | Moderate | Large apps, teams |
-| Jotai | ~3 KB | Easy | Atomic state, performance |
+| Context API | 0（内置） | 简单 | 小型应用、主题/认证 |
+| Zustand | ~1 KB | 非常简单 | 中型应用 |
+| Redux Toolkit | ~11 KB | 中等 | 大型应用、团队协作 |
+| Jotai | ~3 KB | 简单 | 原子化状态、性能敏感 |
 
 ## Context API
 
-Built into React. Good for values that change infrequently (theme, locale, auth status).
+React 内置方案。适用于不频繁变化的值（主题、语言、认证状态）。
 
 ```jsx
 const ThemeContext = createContext('light')
@@ -46,7 +46,7 @@ function App() {
 
 ## Zustand
 
-My current favorite. Minimal boilerplate, no providers needed.
+我目前最喜欢的方案。极少的模板代码，无需 Provider。
 
 ```ts
 import { create } from 'zustand'
@@ -59,7 +59,7 @@ const useStore = create((set) => ({
 
 ## Redux Toolkit
 
-Best for complex async workflows and large teams. Built-in immutability via Immer.
+最适合复杂的异步工作流和大型团队。通过 Immer 内置不可变数据支持。
 
 ```ts
 const slice = createSlice({
@@ -71,8 +71,8 @@ const slice = createSlice({
 })
 ```
 
-## Conclusion
+## 总结
 
-- **Personal projects** → Zustand (simple, powerful)
-- **Team projects** → Redux Toolkit (predictable, well-structured)
-- **Small features** → Context API (no extra dependency)
+- **个人项目** → Zustand（简洁、强大）
+- **团队项目** → Redux Toolkit（可预测、结构清晰）
+- **小型功能** → Context API（无需额外依赖）

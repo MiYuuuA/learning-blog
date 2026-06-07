@@ -1,7 +1,7 @@
 # Node.js
 
-Learning notes on Node.js backend development.
+Node.js 后端开发学习笔记。
 
-## Articles
+## 文章
 
-- [Express vs Fastify](./express-vs-fastify) — Comparing two popular Node.js web frameworks.
+- [Express vs Fastify](./express-vs-fastify) — 对比两个流行的 Node.js Web 框架。

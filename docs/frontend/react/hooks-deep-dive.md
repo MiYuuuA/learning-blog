@@ -1,5 +1,5 @@
 ---
-title: React Hooks Deep Dive
+title: React Hooks 深入
 date: 2026-05-15
 tags:
   - react
@@ -7,22 +7,22 @@ tags:
   - frontend
 category: frontend
 project: react
-description: A thorough exploration of React's built-in hooks — useState, useEffect, useMemo, useCallback, and custom hooks.
+description: 深入探索 React 内置 Hooks — useState、useEffect、useMemo、useCallback 以及自定义 Hooks。
 ---
 
-# React Hooks Deep Dive
+# React Hooks 深入
 
 ## useState
 
-`useState` is the most fundamental hook. It lets you add state to function components.
+`useState` 是最基础的 Hook。它可以让你在函数组件中添加状态。
 
 ```jsx
 const [count, setCount] = useState(0)
 ```
 
-### Lazy Initialization
+### 惰性初始化
 
-When the initial state is expensive to compute, pass a function:
+当初始状态的计算代价较高时，可以传入一个函数：
 
 ```jsx
 const [data, setData] = useState(() => {
@@ -32,7 +32,7 @@ const [data, setData] = useState(() => {
 
 ## useEffect
 
-`useEffect` handles side effects: data fetching, subscriptions, DOM mutations.
+`useEffect` 用于处理副作用：数据获取、订阅、DOM 操作。
 
 ```jsx
 useEffect(() => {
@@ -41,22 +41,22 @@ useEffect(() => {
 }, [id])
 ```
 
-### Cleanup
+### 清理函数
 
-The return function runs before the effect re-runs and on unmount. Always clean up subscriptions, timers, and event listeners.
+返回的函数会在 effect 重新执行前以及组件卸载时运行。务必清理订阅、定时器和事件监听器。
 
-## useMemo and useCallback
+## useMemo 和 useCallback
 
-- **`useMemo`** memoizes a **value** — useful for expensive computations.
-- **`useCallback`** memoizes a **function** — useful for stable references passed to child components.
+- **`useMemo`** 缓存一个**值** — 适用于开销较大的计算。
+- **`useCallback`** 缓存一个**函数** — 适用于需要传递给子组件的稳定引用。
 
-::: warning Don't overuse
-Only use them when you have measured a performance problem. Premature memoization adds complexity without benefit.
+::: warning 不要过度使用
+只有在确认存在性能问题时才使用它们。过早的记忆化只会增加复杂度而无实际收益。
 :::
 
-## Custom Hooks
+## 自定义 Hooks
 
-Custom hooks are functions that start with `use` and can call other hooks:
+自定义 Hook 是以 `use` 开头的函数，内部可以调用其他 Hooks：
 
 ```jsx
 function useWindowWidth() {
@@ -72,9 +72,9 @@ function useWindowWidth() {
 }
 ```
 
-## Key Takeaways
+## 核心要点
 
-1. Always follow the [Rules of Hooks](https://react.dev/reference/rules/rules-of-hooks).
-2. Prefer `useState` and `useEffect` for most cases.
-3. Reach for `useMemo` / `useCallback` only when profiling shows it helps.
-4. Extract reusable logic into custom hooks — they compose beautifully.
+1. 始终遵循 [Hooks 规则](https://react.dev/reference/rules/rules-of-hooks)。
+2. 大多数场景优先使用 `useState` 和 `useEffect`。
+3. 仅在性能分析表明有必要时才使用 `useMemo` / `useCallback`。
+4. 将可复用逻辑抽取为自定义 Hook — 它们的组合性非常优雅。

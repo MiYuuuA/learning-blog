@@ -1,8 +1,8 @@
-# Backend
+# 后端
 
-Notes on backend technologies — Node.js, databases, APIs, and server architecture.
+后端技术笔记 — Node.js、数据库、API 以及服务器架构。
 
-## Projects
+## 项目
 
-- **[Node.js](./nodejs/)** — Frameworks, runtime, async patterns.
-- **[Databases](./databases/)** — SQL, NoSQL, ORMs, query optimization.
+- **[Node.js](./nodejs/)** — 框架、运行时、异步模式。
+- **[数据库](./databases/)** — SQL、NoSQL、ORM、查询优化。

@@ -1,8 +1,8 @@
-# Frontend
+# 前端
 
-Notes on frontend technologies — React, TypeScript, CSS, browser APIs, and more.
+前端技术笔记 — React、TypeScript、CSS、浏览器 API 等。
 
-## Projects
+## 项目
 
-- **[React](./react/)** — Hooks, state management, rendering, performance optimization.
-- **[TypeScript](./typescript/)** — Types, generics, utility types, type gymnastics.
+- **[React](./react/)** — Hooks、状态管理、渲染、性能优化。
+- **[TypeScript](./typescript/)** — 类型、泛型、工具类型、类型体操。

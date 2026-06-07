@@ -1,5 +1,5 @@
 ---
-title: PostgreSQL Basics
+title: PostgreSQL 基础
 date: 2026-05-22
 tags:
   - postgresql
@@ -8,14 +8,14 @@ tags:
   - backend
 category: backend
 project: databases
-description: Getting started with PostgreSQL — setup, common queries, indexing, and best practices.
+description: PostgreSQL 入门 — 安装配置、常用查询、索引及最佳实践。
 ---
 
-# PostgreSQL Basics
+# PostgreSQL 基础
 
-PostgreSQL is a powerful, open-source relational database. Here are the fundamentals.
+PostgreSQL 是一个功能强大的开源关系型数据库。以下是基础知识。
 
-## Installation
+## 安装
 
 ```bash
 # macOS
@@ -24,27 +24,27 @@ brew install postgresql@16
 # Ubuntu
 sudo apt install postgresql
 
-# Start the service
+# 启动服务
 brew services start postgresql@16   # macOS
 sudo systemctl start postgresql     # Linux
 ```
 
-## Connecting
+## 连接数据库
 
 ```bash
 psql -U postgres
 ```
 
-Or from Node.js:
+或通过 Node.js：
 
 ```ts
 import pg from 'pg'
 const pool = new pg.Pool({ database: 'myapp' })
 ```
 
-## Common Operations
+## 常用操作
 
-### Create a table
+### 创建表
 
 ```sql
 CREATE TABLE users (
@@ -55,7 +55,7 @@ CREATE TABLE users (
 );
 ```
 
-### Query with filters
+### 条件查询
 
 ```sql
 SELECT * FROM users
@@ -64,7 +64,7 @@ ORDER BY created_at DESC
 LIMIT 10;
 ```
 
-### Join
+### 联表查询
 
 ```sql
 SELECT users.name, orders.total
@@ -73,23 +73,23 @@ JOIN orders ON users.id = orders.user_id
 WHERE orders.total > 100;
 ```
 
-## Indexing
+## 索引
 
-Indexes speed up queries at the cost of write performance.
+索引可以加速查询，但会牺牲写入性能。
 
 ```sql
--- Single column index
+-- 单列索引
 CREATE INDEX idx_users_email ON users(email);
 
--- Composite index
+-- 复合索引
 CREATE INDEX idx_orders_user_date ON orders(user_id, created_at);
 ```
 
-::: tip Tip
-Use `EXPLAIN ANALYZE` before and after adding an index to confirm it helps.
+::: tip 提示
+在添加索引前后使用 `EXPLAIN ANALYZE` 来确认索引确实有帮助。
 :::
 
-## Transactions
+## 事务
 
 ```sql
 BEGIN;
@@ -98,9 +98,9 @@ BEGIN;
 COMMIT;
 ```
 
-## Key Takeaways
+## 核心要点
 
-1. Use `SERIAL` or `IDENTITY` for auto-incrementing primary keys.
-2. Add indexes on columns you filter or join on frequently.
-3. Always wrap multi-step mutations in transactions.
-4. Use connection pools in production — don't create a new connection per request.
+1. 使用 `SERIAL` 或 `IDENTITY` 作为自增主键。
+2. 为经常用于筛选或联表的列添加索引。
+3. 始终将多步数据变更包裹在事务中。
+4. 在生产环境中使用连接池 — 不要为每个请求创建新连接。

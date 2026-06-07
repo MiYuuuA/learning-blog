@@ -1,7 +1,7 @@
 # TypeScript
 
-Learning notes on TypeScript's type system.
+TypeScript 类型系统学习笔记。
 
-## Articles
+## 文章
 
-- [Advanced Types](./advanced-types) — Conditional types, mapped types, template literal types.
+- [高级类型](./advanced-types) — 条件类型、映射类型、模板字面量类型。
